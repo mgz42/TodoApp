@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Boite.create(nom: "Liste courses")
+Boite.create(nom: "Semaine 15/04")
+Boite.create(nom: "Semaine 22/04")
+Boite.create(nom: "Autres")

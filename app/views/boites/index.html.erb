@@ -1,0 +1,49 @@
+<div class="container">
+  <div data-controller="toggle">
+  <div data-action="click->toggle#fire">+</div>
+  <div class="d-none" data-toggle-target="newtask" >
+          <%= form_with model: @boite do |form| %>
+          <%= form.text_field :nom %>
+          <%= form.submit %>
+          <% end %>
+        </div>
+  </div>
+
+  <div class="row pt-4">
+      <% @boites.each do |boite| %>
+      <div class="col-4"  data-controller="toggle">
+        <div class="boite-carte mx-2 px-4 py-3 d-flex justify-content-between">
+          <div class="d-flex">
+            <div><%= link_to "x", boite_path(boite), class:"delete-button pe-2", data: {turbo_method: :delete}%></div>
+            <div><%= boite.nom %></div>
+          </div>
+          <div data-action="click->toggle#fire">+</div>
+        </div>
+
+        <div class="tache-carte mb-4 mx-4 <%= "p-3" if boite.tasks.length > 0 %>">
+          <% boite.tasks.each do |task| %>
+          <div class="line my-3 <%= "d-none" if task.content == boite.tasks.first.content %>" ></div>
+            <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex">
+                <div class="pe-2 case-delete">
+                  <%= link_to "x", task_path(task), class:"delete-button", data: {turbo_method: :delete}%>
+                </div>
+                <div><%= task.content %></div>
+              </div>
+              <div><input type="checkbox" <%= "checked" if task.done == true %> /></div>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="d-none" data-toggle-target="newtask" >
+          <%= form_with model: @task do |form| %>
+          <%= form.text_field :content %>
+          <%= form.hidden_field :boite_id, value: boite.id %>
+          <%= form.submit %>
+          <% end %>
+        </div>
+
+      </div>
+      <% end %>
+  </div>
+</div>

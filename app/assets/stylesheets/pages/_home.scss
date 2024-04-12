@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+.boite-carte{
+  background-color: rgb(195, 195, 195);
+  border-radius: 10px;
+}
+.tache-carte{
+  background-color: rgb(219, 219, 219);
+  border-radius: 0 0 10px 10px;
+}
+.delete-button{
+  text-decoration: none !important;
+  color: black;
+}
+.case-delete{
+  margin-top: -0.05rem;
+}
+.line{
+  width: 100%;
+  background-color: grey;
+  height: 1px;
+}
