@@ -30,7 +30,7 @@
                 </div>
                 <div><%= task.content %></div>
               </div>
-              <div><input type="checkbox" <%= "checked" if task.done == true %> /></div>
+              <div data-controller="checkbox"><input data-checkbox-target="box" data-action="checkbox#toggle" type="checkbox" <%= "checked" if task.done == true %> /></div>
             </div>
           <% end %>
         </div>
