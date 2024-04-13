@@ -12,14 +12,14 @@ class TasksController < ApplicationController
   end
 
   def update
-    raise
     @task = Task.find(params[:id])
-    @task.upadte(done: safe_params[:done])
+    @task.update(done: !@task.done)
+    redirect_to boites_path
   end
 
   private
 
   def safe_params
-    params.require(:task).permit(:content, :boite_id, :done)
+    params.require(:task).permit(:content, :boite_id)
   end
 end

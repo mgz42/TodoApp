@@ -30,7 +30,12 @@
                 </div>
                 <div><%= task.content %></div>
               </div>
-              <div data-controller="checkbox"><input data-checkbox-target="box" data-action="checkbox#toggle" type="checkbox" <%= "checked" if task.done == true %> /></div>
+              <div>
+                <%= link_to task_path(task),  data: {turbo_method: :patch} do %>
+
+                <i class="<%= task.done == true ? "fa-regular fa-square-check" : "fa-regular fa-square" %>"></i>
+                <% end %>
+              </div>
             </div>
           <% end %>
         </div>
