@@ -9,6 +9,6 @@
 #   end
 
 Boite.create(nom: "Liste courses")
-Boite.create(nom: "Semaine 15/04")
-Boite.create(nom: "Semaine 22/04")
+Boite.create(nom: "Important")
+Boite.create(nom: "Facultatif")
 Boite.create(nom: "Autres")
