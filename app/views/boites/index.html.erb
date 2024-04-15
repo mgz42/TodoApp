@@ -16,6 +16,7 @@
           <div class="d-flex">
             <div><%= link_to "x", boite_path(boite), class:"delete-button pe-2", data: {turbo_method: :delete}%></div>
             <div><%= boite.nom %></div>
+            <div>&nbsp;<%= boite.created_at.strftime("%m-%d") %></div>
           </div>
           <div data-action="click->toggle#fire">+</div>
         </div>
