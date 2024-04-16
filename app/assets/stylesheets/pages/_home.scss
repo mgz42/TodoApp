@@ -23,3 +23,19 @@ i{
   color: black !important;
   text-decoration: none !important;
 }
+.bouton-nouvelle-boite{
+  background-color: rgb(170, 207, 118);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  width: 4rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+
+  &:hover{
+    transition: all 0.3s ease;
+    background-color: rgb(62, 116, 62);
+  }
+}
