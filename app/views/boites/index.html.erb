@@ -4,6 +4,7 @@
   <div class="d-none" data-toggle-target="newtask" >
           <%= form_with model: @boite do |form| %>
           <%= form.text_field :nom %>
+          <%= form.date_select :day %>
           <%= form.submit %>
           <% end %>
         </div>

@@ -23,6 +23,6 @@ class BoitesController < ApplicationController
   private
 
   def safe_params
-    params.require(:boite).permit(:nom)
+    params.require(:boite).permit(:nom, :day)
   end
 end
