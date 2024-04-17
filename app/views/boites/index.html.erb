@@ -3,8 +3,8 @@
   <div  class="bouton-nouvelle-boite" data-action="click->toggle#fire">+</div>
   <div class="d-none" data-toggle-target="newtask" >
           <%= form_with model: @boite do |form| %>
-          <%= form.text_field :nom %>
-          <%= form.date_select :day %>
+          <%= form.text_field :nom , placeholder: "Nom de la boite",class: " largeur form-control"%>
+          <%= form.date_field :day, class:" largeur input-group date" %>
           <%= form.submit %>
           <% end %>
         </div>
